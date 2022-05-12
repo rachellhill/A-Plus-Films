@@ -3,6 +3,7 @@ p {
 }
 
 .card__poster {
-  transform: scale(.1);
+  width: 200px;
+  height: 300px;
   margin: 0;
 }
