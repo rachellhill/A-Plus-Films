@@ -9,4 +9,7 @@
   margin: 10px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 35px;
+  padding-bottom: 28px;
 }

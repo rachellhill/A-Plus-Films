@@ -4,6 +4,9 @@ p {
 
 .card__poster {
   width: 200px;
-  height: 300px;
-  margin: 0;
+  height: 285px;
+  margin: 40px;
+  border-radius: 15px;
+  box-shadow: 8px 8px 8px;
+  border: 1px solid white;
 }
