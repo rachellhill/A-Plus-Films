@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import movieData from '../mockData';
 import Nav from './Nav';
+import Movies from './Movies';
 import '../styles/App.css';
 
 class App extends Component {
@@ -15,7 +16,9 @@ class App extends Component {
     return (
       <div>
         <Nav />
-        <main></main>
+        <div className='movies-container'>
+          <Movies movies={this.state.movies}/>
+        </div>
       </div>
     )
   }

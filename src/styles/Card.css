@@ -1,0 +1,8 @@
+p {
+  color: white;
+}
+
+.card__poster {
+  transform: scale(.1);
+  margin: 0;
+}

@@ -1,0 +1,18 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid white;
+  margin: 10px;
+}
+
+.nav__header {
+  color: white;
+  margin: 15px;
+}
+
+.nav__buttons-box {
+  display: flex;
+  width: 30%;
+  justify-content: space-evenly;
+  align-items: center;
+}
