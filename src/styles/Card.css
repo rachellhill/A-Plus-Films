@@ -3,10 +3,25 @@ p {
 }
 
 .card__poster {
+  background-size: cover;
   width: 200px;
   height: 285px;
   margin: 40px;
   border-radius: 15px;
   box-shadow: 8px 8px 8px;
   border: 1px solid white;
+  cursor: pointer;
+}
+
+.card__hover-info{
+  font-size: 20px;
+  color: white;
+  position: relative;
+  background-color: black;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hidden{
+  display: none;
 }
