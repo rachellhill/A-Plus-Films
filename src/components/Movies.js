@@ -9,6 +9,9 @@ const Movies = ({ movies }) => {
       <Card
         key={movie.id}
         img={movie.poster_path}
+        title={movie.title}
+        year={movie.release_date}
+        rating={movie.average_rating}
       />
     )
   })
