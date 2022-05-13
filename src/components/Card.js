@@ -16,15 +16,19 @@ class Card extends Component {
   }
 
   render = () => {
+    let hoverClass;
+    this.state.show ? hoverClass = 'card__hover-info' : hoverClass = 'hidden'
     return (
         <div className='card__poster' 
         onMouseEnter={this.handleHover} 
         onMouseLeave={this.handleHover} 
         src={this.props.img} 
         style={{backgroundImage: `url(${this.props.img})`}}>
-          <h2 className={this.state.show ? 'card__hover-info' : 'hidden'}>{this.props.title}</h2>
-          <h2 className={this.state.show ? 'card__hover-info' : 'hidden'}>{this.props.year}</h2>
-          <h2 className={this.state.show ? 'card__hover-info' : 'hidden'}>{this.props.rating}</h2>
+          <div className={this.state.show ? 'mask' : 'hidden'}>
+            <h2 className={hoverClass}>{this.props.title}</h2>
+            <h2 className={hoverClass}>{this.props.year}</h2>
+            <h2 className={hoverClass}>{this.props.rating.toFixed(1)}</h2>
+          </div>
         </div>
       )
     }
