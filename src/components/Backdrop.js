@@ -1,10 +1,13 @@
 import React from "react";
+import GeneralInfo from "./GeneralInfo";
+import '../styles/Backdrop.css'
 
-const Backdrop = () => {
+const Backdrop = (props) => {
     return (
-        <div>
-            <p>General Info</p>
+        <div className="movie__backdrop" style={{backgroundImage: `url(${props.movie.backdrop_path})`}}>
+            <GeneralInfo title={props.movie.title} rating={props.movie.average_rating} genres={props.movie.genres}/>
         </div>
+       
     )
 }
 

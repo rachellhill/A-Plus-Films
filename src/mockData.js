@@ -9,7 +9,8 @@ const movieData = {
       "release_date": "2020-09-29",
       overview: "A professional thief with $40 million in debt and his family's life on the line must commit one final heist - rob a futuristic airborne casino filled with the world's most dangerous criminals.",
       genres: [
-      "Action"
+      "Action",
+      "Comedy"
       ],
       budget: 0,
       revenue: 0,

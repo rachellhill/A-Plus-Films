@@ -6,9 +6,12 @@ class Movie extends Component {
         super()
     }
 
-    render =() => {
+    render = () => {
+        console.log(this.props.selectedMovie)
         return (
-            <Backdrop/>
+            <div>
+                <Backdrop movie={this.props.selectedMovie} />
+            </div>
         )
     }
 }

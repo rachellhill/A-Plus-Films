@@ -15,11 +15,10 @@ class App extends Component {
   }
 
   handleMovieClick = (id) => {
-    console.log(id)
+    let foundMovie = movieData.movies.find(movie => movie.id === id)
     this.setState({
       showMovie: true,
-      allMovies: movieData,
-      selectedMovie: id
+      selectedMovie: foundMovie
     })
   }
 
@@ -27,7 +26,7 @@ class App extends Component {
     return (
       <div>
         <Nav />
-        {this.state.showMovie ? <Movie movies={movieData}/> : 
+        {this.state.showMovie ? <Movie selectedMovie={this.state.selectedMovie}/> : 
           <div className='movies-container'>
             <Movies movies={this.state.movies} handleMovieClick={this.handleMovieClick}/>
           </div>
