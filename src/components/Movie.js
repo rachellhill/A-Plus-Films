@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Backdrop from './Backdrop'
+import DetailedInfo from './DetailedInfo'
 
 class Movie extends Component {
     constructor() {
@@ -11,6 +12,7 @@ class Movie extends Component {
         return (
             <div>
                 <Backdrop movie={this.props.selectedMovie} />
+                <DetailedInfo movie={this.props.selectedMovie}/>
             </div>
         )
     }
