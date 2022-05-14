@@ -6,7 +6,16 @@ const movieData = {
       "backdrop_path": "https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg",
       "title": "Money Plane",
       "average_rating": 6.666666666666667,
-      "release_date": "2020-09-29"
+      "release_date": "2020-09-29",
+      overview: "A professional thief with $40 million in debt and his family's life on the line must commit one final heist - rob a futuristic airborne casino filled with the world's most dangerous criminals.",
+      genres: [
+      "Action",
+      "Comedy"
+      ],
+      budget: 0,
+      revenue: 0,
+      runtime: 82,
+      tagline: "",
     },
     {
       "id": 337401,
@@ -14,7 +23,18 @@ const movieData = {
       "backdrop_path": "https://image.tmdb.org/t/p/original//zzWGRw277MNoCs3zhyG3YmYQsXv.jpg",
       "title": "Mulan",
       "average_rating": 4.909090909090909,
-      "release_date": "2020-09-04"
+      "release_date": "2020-09-04",
+      overview: "When the Emperor of China issues a decree that one man per family must serve in the Imperial Chinese Army to defend the country from Huns, Hua Mulan, the eldest daughter of an honored warrior, steps in to take the place of her ailing father. She is spirited, determined and quick on her feet. Disguised as a man by the name of Hua Jun, she is tested every step of the way and must harness her innermost strength and embrace her true potential.",
+      genres: [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Fantasy"
+      ],
+      budget: 200000000,
+      revenue: 57000000,
+      runtime: 115,
+      tagline: "",
     },
     {
       "id": 718444,
