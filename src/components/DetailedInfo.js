@@ -8,9 +8,9 @@ import Specs from './Specs'
 const DetailedInfo = (props) => {
     return (
         <div className='movie__detailed-info'>
-            <Specs/>
+            <Specs specs={props.movie}/>
             <Synopsis overview={props.movie.overview}/>
-            <Trailers/>
+            <Trailers trailers={props.trailers} />
         </div>
     )
 }
