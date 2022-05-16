@@ -5,7 +5,7 @@ import '../styles/Specs.css'
 const Specs = (props) => {
   console.log(props)
     return (
-        <div>
+        <div className='specs'>
           <h5>Additional Information</h5>
           <ul>
             <li>Run Time: {props.specs.runtime} minutes</li>
