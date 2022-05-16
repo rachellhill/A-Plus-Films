@@ -7,7 +7,7 @@ const Backdrop = (props) => {
         <div className="movie__backdrop" style={{backgroundImage: `url(${props.movie.backdrop_path})`}}>
             <GeneralInfo title={props.movie.title} rating={props.movie.average_rating} genres={props.movie.genres}/>
         </div>
-       
+
     )
 }
 
