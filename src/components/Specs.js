@@ -3,7 +3,6 @@ import '../styles/Specs.css'
 
 
 const Specs = (props) => {
-  console.log(props)
     return (
         <div className='specs'>
           <h5>Additional Information</h5>

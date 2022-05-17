@@ -12,11 +12,11 @@ class Movie extends Component {
     }
 
     componentDidMount() {
-      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.selectedMovie.id}`)
+      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`)
         .then(response => response.json())
         .then(data => this.setState({ movie: data.movie }))
 
-      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.selectedMovie.id}/videos`)
+      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}/videos`)
         .then(response => response.json())
         .then(data => this.setState({ ...this.state, trailers: data.videos }))
     }
