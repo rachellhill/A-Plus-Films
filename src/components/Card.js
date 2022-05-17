@@ -26,8 +26,8 @@ class Card extends Component {
         style={{backgroundImage: `url(${this.props.img})`}}>
           <div className={this.state.show ? 'mask' : 'hidden'} onClick={() => this.props.handleMovieClick(this.props.id)}>
             <h2 className={hoverClass}>{this.props.title}</h2>
-            <h2 className={hoverClass}>{this.props.year}</h2>
-            <h2 className={hoverClass}>{this.props.rating.toFixed(1)}</h2>
+            <h2 className={hoverClass}>Release Date: {this.props.year}</h2>
+            <h2 className={hoverClass}>Rating: {this.props.rating.toFixed(1)}</h2>
           </div>
         </div>
       )
