@@ -3,6 +3,7 @@ import Nav from './Nav';
 import Movies from './Movies';
 import Movie from './Movie';
 import '../styles/App.css';
+import { Route, Link, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -20,22 +21,21 @@ class App extends Component {
   }
 
   handleMovieClick = (id) => {
-    let foundMovie = this.state.movies.find(movie => movie.id === id)
-    this.setState({
-      showMovie: true,
-      selectedMovie: foundMovie
-    })
+
+    this.forceUpdate()
   }
 
-  render = () => {
+  render () {
     return (
       <div>
         <Nav />
-        {this.state.showMovie ? <Movie selectedMovie={this.state.selectedMovie}/> :
-          <div className='movies-container'>
+        <Route path='/:id' render={({match}) => <Movie id={match.params.id}/>}/>
+        <Route exact path='/' render={() => {
+          return (
+            <div className='movies-container'>
             <Movies movies={this.state.movies} handleMovieClick={this.handleMovieClick}/>
           </div>
-        }
+        )}}/>
       </div>
     )
   }

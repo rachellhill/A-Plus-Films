@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../styles/Card.css';
+import { Link } from 'react-router-dom';
 
 class Card extends Component {
   constructor(){
@@ -19,17 +20,20 @@ class Card extends Component {
     let hoverClass;
     this.state.show ? hoverClass = 'card__hover-info' : hoverClass = 'hidden'
     return (
-        <div className='card__poster' 
-        onMouseEnter={this.handleHover} 
-        onMouseLeave={this.handleHover} 
-        src={this.props.img} 
+      <Link to={`/${this.props.id}`}>
+        <div className='card__poster'
+        onMouseEnter={this.handleHover}
+        onMouseLeave={this.handleHover}
+        src={this.props.img}
         style={{backgroundImage: `url(${this.props.img})`}}>
-          <div className={this.state.show ? 'mask' : 'hidden'} onClick={() => this.props.handleMovieClick(this.props.id)}>
+          <div className={this.state.show ? 'mask' : 'hidden'} 
+          onClick={() => this.props.handleMovieClick(this.props.id)}>
             <h2 className={hoverClass}>{this.props.title}</h2>
             <h2 className={hoverClass}>Release Date: {this.props.year}</h2>
             <h2 className={hoverClass}>Rating: {this.props.rating.toFixed(1)}</h2>
           </div>
         </div>
+      </Link>
       )
     }
   
