@@ -16,3 +16,19 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
+.nav__home-button {
+  height: 70%;
+  width: 35%;
+  color: white;
+  font-size: 25px;
+  font-weight: bolder;
+  background-color: black;
+  border-radius: 8px;
+  border: solid white 2px;
+}
+
+.nav__home-button:hover {
+  background: #6D47F2;
+  cursor: pointer;
+}
