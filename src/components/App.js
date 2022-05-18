@@ -20,11 +20,6 @@ class App extends Component {
     .then(data => this.setState({ movies: data.movies }));
   }
 
-  handleMovieClick = (id) => {
-
-    this.forceUpdate()
-  }
-
   render () {
     return (
       <div>
@@ -33,7 +28,7 @@ class App extends Component {
         <Route exact path='/' render={() => {
           return (
             <div className='movies-container'>
-            <Movies movies={this.state.movies} handleMovieClick={this.handleMovieClick}/>
+            <Movies movies={this.state.movies}/>
           </div>
         )}}/>
       </div>
