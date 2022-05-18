@@ -13,7 +13,6 @@ const Movies = ({ movies, handleMovieClick }) => {
         title={movie.title}
         year={movie.release_date}
         rating={movie.average_rating}
-        handleMovieClick={handleMovieClick}
       />
     )
   })
