@@ -25,6 +25,10 @@
   font-size: 12px;
 }
 
+.movie__trailers{
+  justify-content: space-evenly;
+}
+
 .movie__synopsis-header {
   height: 20%;
   font-size: 30px;

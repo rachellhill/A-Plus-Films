@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Backdrop from './Backdrop'
 import DetailedInfo from './DetailedInfo'
 import Error from './Error'
+import '../styles/Movie.css'
 
 class Movie extends Component {
     constructor() {
@@ -31,7 +32,7 @@ class Movie extends Component {
 
     render = () => {
         return (
-          <div>
+          <div className='movie'>
             {this.state.error ? <Error /> :
               <div>
                   <Backdrop movie={this.state.movie} />

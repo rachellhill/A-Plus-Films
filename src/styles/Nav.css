@@ -7,12 +7,15 @@
 
 .nav__header {
   color: white;
-  margin: 15px;
+  margin: 5px;
+  margin-left: 15px;
+  font-family: 'Limelight', cursive;
+  font-size: 35px;
 }
 
 .nav__buttons-box {
   display: flex;
-  width: 30%;
+  width: 20%;
   justify-content: space-evenly;
   align-items: center;
 }
