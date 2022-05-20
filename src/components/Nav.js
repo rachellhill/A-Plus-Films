@@ -10,6 +10,9 @@ const Nav = () => {
         <Link to='/'>
           <button className='nav__home-button'>Home</button>
         </Link>
+        <Link to='/user/login'>
+          <button className='nav__login-button'>Login</button>
+        </Link>
       </div>
     </nav>
   );

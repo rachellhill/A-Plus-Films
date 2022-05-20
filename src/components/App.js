@@ -5,6 +5,7 @@ import Movie from './Movie';
 import '../styles/App.css';
 import { Route, Link, Switch, Redirect } from 'react-router-dom';
 import Error from './Error';
+import Login from './Login';
 
 class App extends Component {
   constructor() {
@@ -12,7 +13,8 @@ class App extends Component {
     this.state = {
       movies: [],
       showMovie: false,
-      error: false
+      error: false,
+      user: ''
     }
   }
 
@@ -25,13 +27,20 @@ class App extends Component {
     })
   }
 
+  handleLogin = (username) => {
+    // fetch here
+    // verify login credentials
+    console.log(username)
+  }
+
   render = () => {
     return (
       <div>
         {this.state.error ? <Error /> :
           <div>
             <Nav />
-            <Route path='/:id' render={({match}) => <Movie id={match.params.id}/>}/>
+            <Route exact path='/user/login' render={() => <Login handleLogin={this.handleLogin}/>}/>
+            <Route exact path='/:id' render={({match}) => <Movie id={match.params.id}/>}/>
             <Route exact path='/' render={() => {
               return (
                 <div className='movies-container'>
