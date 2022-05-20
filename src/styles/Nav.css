@@ -15,23 +15,23 @@
 
 .nav__buttons-box {
   display: flex;
-  width: 20%;
+  flex-direction: row;
+  width: 30%;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.nav__home-button {
-  height: 70%;
-  width: 100%;
+.nav__home-button, .nav__login-button {
   color: white;
   font-size: 25px;
   font-weight: bolder;
   background-color: black;
   border-radius: 8px;
   border: solid white 2px;
+  margin-left: 23px;
 }
 
-.nav__home-button:hover {
+.nav__home-button:hover, .nav__login-button:hover {
   background: #6D47F2;
   cursor: pointer;
 }

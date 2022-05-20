@@ -36,4 +36,10 @@ describe('App', () => {
     cy.get('.nav__home-button').click()
     cy.url().should('eq', 'http://localhost:3000/')
   })
+
+  // it('should be able to display error if server fails', () => {
+  //   cy.intercept('GET', '')
+  //   cy.get('.card__poster').first().trigger('mouseover').click().wait(3000)
+  //   cy.get('.error-message').contains('Error loading - please try again!')
+  // })
 })

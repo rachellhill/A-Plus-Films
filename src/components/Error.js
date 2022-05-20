@@ -6,7 +6,7 @@ import '../styles/Error.css'
 const Error = () => {
   return (
       <div className='error'>
-        <h1>Error loading - please try again!</h1>
+        <h1 className='error-message'>Error loading - please try again!</h1>
         <img src={dino}/>
         <Link to='/'>
           <button className='nav__home-button'>Try Again</button>
