@@ -27,10 +27,8 @@ class App extends Component {
     })
   }
 
-  handleLogin = (username) => {
-    // fetch here
-    // verify login credentials
-    console.log(username)
+  handleLogin = (user) => {
+    this.setState({...this.state, user: user})
   }
 
   render = () => {
@@ -38,7 +36,7 @@ class App extends Component {
       <div>
         {this.state.error ? <Error /> :
           <div>
-            <Nav />
+            <Nav user={this.state.user}/>
             <Route exact path='/user/login' render={() => <Login handleLogin={this.handleLogin}/>}/>
             <Route exact path='/:id' render={({match}) => <Movie id={match.params.id}/>}/>
             <Route exact path='/' render={() => {

@@ -2,10 +2,12 @@ import React from 'react';
 import '../styles/Nav.css';
 import { Link } from 'react-router-dom';
 
-const Nav = () => {
+const Nav = (props) => {
+  console.log(props);
   return (
     <nav className='nav'>
       <h1 className='nav__header'>A+ Films</h1>
+      {props.user ? <h2>Welcome, {`${props.user.username}`}</h2> : ''}
       <div className='nav__buttons-box'>
         <Link to='/'>
           <button className='nav__home-button'>Home</button>
