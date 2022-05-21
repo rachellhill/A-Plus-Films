@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
+
 import '../styles/Card.css';
 import { Link } from 'react-router-dom';
 
 class Card extends Component {
   constructor(){
     super();
-    this.state={
+    this.state = {
       show: false,
       watched: 'white',
     }
@@ -49,7 +50,7 @@ class Card extends Component {
             </div>
           </div>
         </Link>
-        {this.props.user && this.state.watched === 'white' ? <button onClick={() => this.props.handleWatchMovie()} className='card__watched-button'>Mark as Watched</button> : ''}
+        {this.props.user && this.state.watched === 'white' ? <button onClick={() => this.props.handleWatchMovie(this.props.id, this.props.rating.toFixed(1), this.props.user)} className='card__watched-button'>Mark as Watched</button> : ''}
       </div>
       )
     }

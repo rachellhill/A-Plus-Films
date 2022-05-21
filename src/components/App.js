@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { fetchUser } from '../apiCalls'
 import Nav from './Nav';
 import Movies from './Movies';
 import Movie from './Movie';
@@ -28,17 +29,22 @@ class App extends Component {
   }
 
   handleWatchMovie = (id, rating, user) => {
-    fetch('http://localhost:3001/api/v1/users/rachel', {
+    fetch(`http://localhost:3001/api/v1/users/${user.username}`, {
       method: 'POST',
       body: JSON.stringify({
-        "id": 9999,
-        "userRating" : 0
+        "id": id,
+        "userRating" : parseInt(rating)
       }),
       headers: {
         'Content-Type': 'application/json'
       }
     }).then(response => response.json())
-      .then(response => console.log(response))
+      .then(response => {
+        console.log(response);
+        console.log(this.state.user)
+        this.state.user.watchedMovies.push(response.post)
+        this.setState({...this.state})
+      })
   }
 
   handleLogin = (user) => {
