@@ -3,7 +3,6 @@ import '../styles/Nav.css';
 import { Link } from 'react-router-dom';
 
 const Nav = (props) => {
-  console.log(props);
   return (
     <nav className='nav'>
       <h1 className='nav__header'>A+ Films</h1>
@@ -13,8 +12,9 @@ const Nav = (props) => {
           <button className='nav__home-button'>Home</button>
         </Link>
         <Link to='/user/login'>
-          <button className='nav__login-button'>Login</button>
+           {!props.user && <button className='nav__login-button'>Login</button>}
         </Link>
+           {props.user && <button className='nav__login-button' onClick={() => props.handleLogout()}>Logout</button>}
       </div>
     </nav>
   );

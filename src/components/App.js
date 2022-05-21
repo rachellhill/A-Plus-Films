@@ -27,8 +27,26 @@ class App extends Component {
     })
   }
 
+  handleWatchMovie = (id, rating, user) => {
+    fetch('http://localhost:3001/api/v1/users/rachel', {
+      method: 'POST',
+      body: JSON.stringify({
+        "id": 9999,
+        "userRating" : 0
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(response => response.json())
+      .then(response => console.log(response))
+  }
+
   handleLogin = (user) => {
     this.setState({...this.state, user: user})
+  }
+  
+  handleLogout = () => {
+    this.setState({...this.state, user: ''})
   }
 
   render = () => {
@@ -36,13 +54,13 @@ class App extends Component {
       <div>
         {this.state.error ? <Error /> :
           <div>
-            <Nav user={this.state.user}/>
+            <Nav user={this.state.user} handleLogout={this.handleLogout}/>
             <Route exact path='/user/login' render={() => <Login handleLogin={this.handleLogin}/>}/>
             <Route exact path='/:id' render={({match}) => <Movie id={match.params.id}/>}/>
             <Route exact path='/' render={() => {
               return (
                 <div className='movies-container'>
-                <Movies movies={this.state.movies}/>
+                <Movies movies={this.state.movies} user={this.state.user} handleWatchMovie={this.handleWatchMovie}/>
               </div>
             )}}/>
           </div>
