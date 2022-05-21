@@ -15,7 +15,8 @@ class App extends Component {
       movies: [],
       showMovie: false,
       error: false,
-      user: ''
+      user: '',
+      modal: false
     }
   }
 
@@ -33,7 +34,7 @@ class App extends Component {
       method: 'POST',
       body: JSON.stringify({
         "id": id,
-        "userRating" : parseInt(rating)
+        "userRating" : rating
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -54,6 +55,11 @@ class App extends Component {
   handleLogout = () => {
     this.setState({...this.state, user: ''})
   }
+
+  openRatingModal = () => {
+    this.setState({modal: true})
+  }
+  ///////////////stopped here to continue
 
   render = () => {
     return (

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import RatingModal from './RatingModal';
 import '../styles/Card.css';
 import { Link } from 'react-router-dom';
 
@@ -30,6 +30,7 @@ class Card extends Component {
 
 
   render = () => {
+    //this.props.handleWatchMovie(this.props.id, this.props.rating.toFixed(1), this.props.user)
     let border;
     this.props.user ?  border = this.renderUserMovies(): border = 'white'
     let hoverClass;
@@ -50,7 +51,7 @@ class Card extends Component {
             </div>
           </div>
         </Link>
-        {this.props.user && this.state.watched === 'white' ? <button onClick={() => this.props.handleWatchMovie(this.props.id, this.props.rating.toFixed(1), this.props.user)} className='card__watched-button'>Mark as Watched</button> : ''}
+        {this.props.user && this.state.watched === 'white' ? <button onClick={() => <RatingModal/>} className='card__watched-button'>Mark as Watched</button> : ''}
       </div>
       )
     }
