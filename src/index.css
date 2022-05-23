@@ -5,6 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: url('./images/hbo.png');
   overflow: auto;
+  background-size: cover;
 }
 
 code {

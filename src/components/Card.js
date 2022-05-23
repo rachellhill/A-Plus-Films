@@ -8,7 +8,7 @@ class Card extends Component {
     super();
     this.state = {
       show: false,
-      watched: 'white',
+      watched: 'white'
     }
   }
 
@@ -22,17 +22,27 @@ class Card extends Component {
   renderUserMovies = () => {
     this.props.user.watchedMovies.forEach(movie => {
       if (movie.id === this.props.id){
-        this.state.watched = 'green '
+        this.state.watched = '#6D47F2'
       }
     })
     return this.state.watched
   }
 
+  renderUserRating = () => {
+    if (!this.props.user) {
+      return 'none'
+    }
+    this.props.user.watchedMovies.forEach(movie => {
+      if (movie.id === this.props.id) {
+        return movie.userRating
+      }
+    })
+  }
 
   render = () => {
     //this.props.handleWatchMovie(this.props.id, this.props.rating.toFixed(1), this.props.user)
     let border;
-    this.props.user ?  border = this.renderUserMovies(): border = 'white'
+    this.props.user ?  border = this.renderUserMovies() : border = 'white'
     let hoverClass;
     this.state.show ? hoverClass = 'card__hover-info' : hoverClass = 'hidden'
     return (
@@ -48,7 +58,9 @@ class Card extends Component {
               <h2 className={hoverClass}>{this.props.title}</h2>
               <h2 className={hoverClass}>Release Date: {this.props.year}</h2>
               <h2 className={hoverClass}>Rating: {this.props.rating.toFixed(1)}</h2>
+              <p className={this.state.watched === '#6D47F2' ? 'card__watched' : 'hidden'}>My rating: {this.renderUserRating()}</p>
             </div>
+            <p className={this.state.watched === '#6D47F2' ? 'card__watched' : 'hidden'}>watched</p>
           </div>
         </Link>
         {this.props.user && this.state.watched === 'white' ? <button onClick={() => this.props.openRatingModal(this.props.id)} className='card__watched-button'>Mark as Watched</button> : ''}

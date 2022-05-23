@@ -55,6 +55,16 @@ p {
   cursor: pointer;
 }
 
+.card__watched {
+  width: 100%;
+  height: 10%;
+  background-color: #1C074E;
+  color: white;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 23px;
+}
+
 .hidden{
   display: none;
 }
