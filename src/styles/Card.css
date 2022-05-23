@@ -40,7 +40,7 @@ p {
   align-items: center;
 }
 
-.card__watched-button{
+.card__watched-button, .card__watched-rating{
   color: white;
   font-size: 20px;
   font-weight: bolder;
@@ -50,6 +50,7 @@ p {
   width: 70%;
   margin-top: -30px;
 }
+
 .card__watched-button:hover{
   background: #6D47F2;
   cursor: pointer;
@@ -63,6 +64,12 @@ p {
   margin-top: 10px;
   text-align: center;
   font-size: 23px;
+}
+
+.card__watched-rating {
+  height: 25px;
+  text-align: center;
+  background-color: #1C074E;
 }
 
 .hidden{
