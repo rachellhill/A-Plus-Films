@@ -1,3 +1,38 @@
-.login__username {
-    color: black
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 1061px;
+    font-size: 40px;
+    margin-top: -197px;
 }
+
+.login__box {
+    height: 325px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login__username {
+    color: black;
+    height: 10%;
+    width: 50%;
+    font-size: 30px;
+    text-align: center;
+    margin-top: -40px;
+}
+
+.login__submit-button {
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+    background-color: black;
+    border-radius: 8px;
+    border: solid white 2px;
+}
+

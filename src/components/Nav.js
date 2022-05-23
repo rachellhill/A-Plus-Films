@@ -6,7 +6,10 @@ const Nav = (props) => {
   return (
     <nav className='nav'>
       <h1 className='nav__header'>A+ Films</h1>
-      {props.user ? <h2>Welcome, {`${props.user.username}`}</h2> : ''}
+      {props.user ? 
+        <div className='nav__welcome-msg-box'>
+          <h2>Welcome, {`${props.user.username[0].toUpperCase() + props.user.username.slice(1, props.user.username.length)}`}</h2>
+        </div> : ''}
       <div className='nav__buttons-box'>
         <Link to='/'>
           <button className='nav__home-button'>Home</button>

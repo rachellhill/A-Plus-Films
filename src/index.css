@@ -5,9 +5,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: url('./images/hbo.png');
   overflow: auto;
+  background-size: cover;
 }
 
-code {
+button {
+  font-family: 'Comfortaa', cursive;
+}
+
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
