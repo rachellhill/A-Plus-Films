@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { fetchUsers } from '../apiCalls';
 import { Link } from 'react-router-dom';
 import '../styles/Login.css';
 
@@ -11,9 +12,7 @@ class Login extends Component {
   }
   
   componentDidMount () {
-      fetch('http://localhost:3001/api/v1/users')
-      .then(response => response.json())
-      .then(data => this.state.users = data)
+      fetchUsers().then(data => this.state.users = data)
   }
   
   handleSubmit(event){

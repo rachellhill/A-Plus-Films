@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { fetchUser } from '../apiCalls'
+import { fetchMovies, postUserRating } from '../apiCalls'
 import Nav from './Nav';
 import Movies from './Movies';
 import Movie from './Movie';
 import '../styles/App.css';
-import { Route, Link, Switch, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Error from './Error';
 import Login from './Login';
 import RatingModal from './RatingModal';
@@ -22,31 +22,16 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    .then(response => response.json())
-    .then(data => this.setState({ movies: data.movies }))
+    fetchMovies().then(data => this.setState({ movies: data.movies }))
     .catch(error => {
       this.setState({ error: true })
     })
   }
 
   handleWatchMovie = (id, rating, user) => {
-    console.log('id', id)
-    console.log('rating', rating)
-    console.log('user', user)
-    fetch(`http://localhost:3001/api/v1/users/${user}`, {
-      method: 'POST',
-      body: JSON.stringify({
-        "id": id,
-        "userRating" : rating
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then(response => response.json())
+    postUserRating(id, rating, user)
       .then(response => {
         console.log(response);
-        console.log(this.state.user)
         this.state.user.watchedMovies.push(response.post)
         this.setState({...this.state, modal: false})
       })
