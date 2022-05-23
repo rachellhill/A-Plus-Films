@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Backdrop from './Backdrop'
 import DetailedInfo from './DetailedInfo'
 import Error from './Error'
+import { fetchMovie, fetchMovieTrailers } from '../apiCalls'
 import '../styles/Movie.css'
 
 class Movie extends Component {
@@ -15,15 +16,13 @@ class Movie extends Component {
     }
 
     componentDidMount = () => {
-      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`)
-        .then(response => response.json())
+        fetchMovie(this.props.id)
         .then(data => this.setState({ movie: data.movie }))
         .catch(error => {
           this.setState({ error: true })
         })
 
-      fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}/videos`)
-        .then(response => response.json())
+        fetchMovieTrailers(this.props.id)
         .then(data => this.setState({ ...this.state, trailers: data.videos }))
         .catch(error => {
           this.setState({ error: true })
