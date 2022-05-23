@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './Card';
 import '../styles/Movies.css';
 
-const Movies = ({ movies, user, handleWatchMovie }) => {
+const Movies = ({ movies, user, openRatingModal }) => {
 
   return movies.map(movie => {
     return (
@@ -14,7 +14,7 @@ const Movies = ({ movies, user, handleWatchMovie }) => {
         year={movie.release_date}
         rating={movie.average_rating}
         user={user}
-        handleWatchMovie={handleWatchMovie}
+        openRatingModal={openRatingModal}
       />
     )
   })

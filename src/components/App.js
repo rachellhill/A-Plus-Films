@@ -7,6 +7,7 @@ import '../styles/App.css';
 import { Route, Link, Switch, Redirect } from 'react-router-dom';
 import Error from './Error';
 import Login from './Login';
+import RatingModal from './RatingModal';
 
 class App extends Component {
   constructor() {
@@ -30,7 +31,10 @@ class App extends Component {
   }
 
   handleWatchMovie = (id, rating, user) => {
-    fetch(`http://localhost:3001/api/v1/users/${user.username}`, {
+    console.log('id', id)
+    console.log('rating', rating)
+    console.log('user', user)
+    fetch(`http://localhost:3001/api/v1/users/${user}`, {
       method: 'POST',
       body: JSON.stringify({
         "id": id,
@@ -44,22 +48,21 @@ class App extends Component {
         console.log(response);
         console.log(this.state.user)
         this.state.user.watchedMovies.push(response.post)
-        this.setState({...this.state})
+        this.setState({...this.state, modal: false})
       })
   }
 
   handleLogin = (user) => {
     this.setState({...this.state, user: user})
   }
-  
+
   handleLogout = () => {
     this.setState({...this.state, user: ''})
   }
 
-  openRatingModal = () => {
-    this.setState({modal: true})
+  openRatingModal = (id) => {
+    this.setState({...this.state, modal: true, selectedMovieId: id })
   }
-  ///////////////stopped here to continue
 
   render = () => {
     return (
@@ -72,11 +75,16 @@ class App extends Component {
             <Route exact path='/' render={() => {
               return (
                 <div className='movies-container'>
-                <Movies movies={this.state.movies} user={this.state.user} handleWatchMovie={this.handleWatchMovie}/>
+                <Movies movies={this.state.movies} user={this.state.user}
+                openRatingModal={this.openRatingModal}/>
               </div>
             )}}/>
           </div>
         }
+        {this.state.modal && <RatingModal
+          id={this.state.selectedMovieId}
+          user={this.state.user}
+          handleWatchMovie={this.handleWatchMovie}/>}
       </div>
     )
   }

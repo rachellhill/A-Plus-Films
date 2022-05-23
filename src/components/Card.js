@@ -11,8 +11,8 @@ class Card extends Component {
       watched: 'white',
     }
   }
-  
-  
+
+
   handleHover = () => {
     this.setState({
       show: !this.state.show
@@ -51,7 +51,7 @@ class Card extends Component {
             </div>
           </div>
         </Link>
-        {this.props.user && this.state.watched === 'white' ? <button onClick={() => <RatingModal/>} className='card__watched-button'>Mark as Watched</button> : ''}
+        {this.props.user && this.state.watched === 'white' ? <button onClick={() => this.props.openRatingModal(this.props.id)} className='card__watched-button'>Mark as Watched</button> : ''}
       </div>
       )
     }
