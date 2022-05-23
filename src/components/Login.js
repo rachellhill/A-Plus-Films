@@ -19,31 +19,24 @@ class Login extends Component {
   handleSubmit(event){
     let foundUser = this.state.users.find(user => user.username === event.target.value)
     this.props.handleLogin(foundUser)
-    //use input to get user ^
-    //foundUser passed in to App \/
-    // this.props.handleLogin(foundUser)
   }
 
   render () {
     return (
       <div className='login'>
-        <h2>Please Login</h2>
-        <p>Username</p>
-        <input
-          className='login__username'
-          type='text'
-          placeholder='Enter username'
-          onChange={(event) => this.handleSubmit(event)}
-        />
-        <p>Password</p>
-        <input
-          className='login__password'
-          type='text'
-          placeholder='Enter username'
-        />
-        <Link to='/'>
-          <button className='nav__home-button'>SUBMIT</button>
-        </Link>
+        <div className='login__box'>
+            <h2>Please Login</h2>
+            <p>Username:</p>
+          <input
+            className='login__username'
+            type='text'
+            placeholder='Enter username'
+            onChange={(event) => this.handleSubmit(event)}
+            />
+          <Link to='/'>
+            <button className='login__submit-button'>SUBMIT</button>
+          </Link>
+        </div>
       </div>
     )
 }

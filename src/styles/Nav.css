@@ -13,6 +13,13 @@
   font-size: 35px;
 }
 
+.nav__welcome-msg-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+
 .nav__buttons-box {
   display: flex;
   flex-direction: row;
