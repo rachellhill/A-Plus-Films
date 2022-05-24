@@ -25,4 +25,11 @@
 
 .modal__rating-input {
   color: black;
+  height: 25px;
+  width: 90px;
+  margin: 30px;
+}
+
+.nav__login-button {
+  margin-left: 0;
 }
