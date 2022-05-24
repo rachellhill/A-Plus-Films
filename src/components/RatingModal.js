@@ -23,7 +23,7 @@ class RatingModal extends Component {
     return (
         <div className="modal__box">
           <div className='modal__content'>
-            <p>What would you rate this movie? (Out of 10 stars)</p>
+            <p className='modal__info'>What would you rate this movie? (Out of 10 stars)</p>
             <input
               className='modal__rating-input'
               type='number'
