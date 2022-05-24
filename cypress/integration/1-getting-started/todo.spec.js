@@ -65,7 +65,7 @@ describe('App', () => {
     cy.get('.card__watched-rating').contains('My rating')
   })
 
-  it.only('allow logged in user to mark a movie as watched', () => {
+  it('allow logged in user to mark a movie as watched', () => {
     cy.visit('http://localhost:3000/user/login')
     cy.get('.login__username').type('rachel')
     cy.get('.login__submit-button').click()
