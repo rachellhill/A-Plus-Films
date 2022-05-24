@@ -52,6 +52,7 @@ Please use the username `user` to login
 - HTML
 - RESTful APIs
 - Express.js
+- Node.js
 
 ## Goals
 
