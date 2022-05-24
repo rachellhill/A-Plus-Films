@@ -19,7 +19,7 @@ A+ Films is a web application that offers users a wide variety of award-winning 
 ## Back End Set Up Instructions
 
 In addition to the above repo running in your terminal, you will also need to follow the steps below to start the back end api that we created.
-1. Clone down THIS repo
+1. Clone down [THIS](https://github.com/rachellhill/A-Plus-Films-api) repo
 2. `cd` into `A-Plus-Films-api`
 3. Run `npm init`
 4. Run `npm i express`
@@ -27,7 +27,7 @@ In addition to the above repo running in your terminal, you will also need to fo
 
 ## Logging in
 
-Please use the username `rachel` or `artan` to login
+Please use the username `user` to login
 
 ## Features
 
