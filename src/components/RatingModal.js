@@ -33,7 +33,7 @@ class RatingModal extends Component {
             />
             {this.state.error && <p>Please enter a number between 1 and 10</p>}
             <button
-              className='nav__login-button'
+              className='modal__submit-button'
               onClick={() => {
                 if (!this.state.error) {
                   this.props.handleWatchMovie(this.props.id, this.state.userRating, this.props.user.username)

@@ -16,7 +16,7 @@ class Login extends Component {
   }
   
   handleSubmit(event){
-    let foundUser = this.state.users.find(user => user.username === event.target.value)
+    let foundUser = this.state.users.find(user => user.username === event.target.value.toLowerCase())
     this.props.handleLogin(foundUser)
   }
 

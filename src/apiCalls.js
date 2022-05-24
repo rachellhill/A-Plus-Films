@@ -2,22 +2,38 @@
 
 const fetchUsers = () => {
     return fetch(`http://localhost:3001/api/v1/users`)
-    .then(response => response.json())
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } 
+    })
 }
 
 const fetchMovies = () => {
     return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies`)
-    .then(response => response.json())
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } 
+    })
 }
 
 const fetchMovie = (id) => {
     return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-    .then(response => response.json())
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } 
+    })
 }
 
 const fetchMovieTrailers = (id) => {
     return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos`)
-    .then(response => response.json())
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      } 
+    })
 }
 
 const postUserRating = (id, rating, user) => {
@@ -30,7 +46,11 @@ const postUserRating = (id, rating, user) => {
       headers: {
         'Content-Type': 'application/json'
       }
-    }).then(response => response.json())
+    }).then(response => {
+      if (response.ok) {
+        return response.json()
+      } 
+    })
 }
 
 
