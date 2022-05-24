@@ -8,7 +8,7 @@ const Nav = (props) => {
       <h1 className='nav__header'>A+ Films</h1>
       {props.user ? 
         <div className='nav__welcome-msg-box'>
-          <h2>Welcome, {`${props.user.username[0].toUpperCase() + props.user.username.slice(1, props.user.username.length)}`}</h2>
+          <h2 className='nav__welcome-msg'>Welcome, {`${props.user.username[0].toUpperCase() + props.user.username.slice(1, props.user.username.length)}`}</h2>
         </div> : ''}
       <div className='nav__buttons-box'>
         <Link to='/'>
